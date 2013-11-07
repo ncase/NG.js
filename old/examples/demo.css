@@ -1,0 +1,17 @@
+body {
+	margin:10px;
+	background:#EEE;
+	font-family: Open Sans;
+}
+#container {
+	width:300px; 
+	padding:20px;
+	background:#FFF;
+	box-shadow: 0 0 5px rgba(0,0,0,0.2);
+}
+button {
+	cursor:pointer;
+}
+hr {
+	border:dashed 1px #CCC
+}

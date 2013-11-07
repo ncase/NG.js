@@ -1,0 +1,42 @@
+
+<!-- STYLE & DOM -->
+
+<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+<link href='demo.css' rel='stylesheet' type='text/css'>
+
+<div id="container">
+
+	<h2>The Scoreboard:</h2>
+	<div id="score_board"></div>
+
+	<hr>
+
+	<div id="logged_out" style="display:none">
+		<h3>You are not logged in. Tragic.</h3>
+		<button id="ng_passport">Login with NG Passport</button>
+	</div>
+
+	<div id="logged_in" style="display:none">
+		
+		<h3 id="metainfo"></h3>
+		Gimme a fake score: <input id="score_number"></input> <br>
+		<button id="score_submit">Submit Score!</button>
+
+		<hr>
+
+		<h3>Click to unlock Medals.</h3>
+		<div id="medal_gallery"></div>
+
+	</div>
+
+</div>
+
+<!-- SCRIPTS -->
+
+<script src="../src/MD5.js"></script>
+<script src="../src/RC4.js"></script>
+<script src="../src/BaseN.js"></script>
+<script src="../src/Promise.js"></script>
+<script src="../src/NG.js"></script>
+
+<script src="demo.js"></script>

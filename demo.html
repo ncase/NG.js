@@ -1,0 +1,30 @@
+<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+<style>
+body {
+	font-family: Open Sans;
+}
+</style>
+
+<div id="medals"></div>
+
+<script src="src/MD5.js"></script>
+<script src="src/RC4.js"></script>
+<script src="src/BaseN.js"></script>
+<script src="src/Q.js"></script>
+<script src="src/NG.js"></script>
+
+<script>
+
+NG.connect("30437:HluZ7LWS","Fh303lEIt2qUdPKmAxLa8K3BaoJjqlwN").then(function(){
+	
+	var medals = NG.medals;
+	var medalDOM = document.getElementById("medals");
+	for(var i=0;i<medals.length;i++){
+		var medal = medals[i];
+		var html = "<img src='"+medal.medal_icon+"'/> "+medal.medal_name+" -- "+medal.medal_description+"<br>";
+		medalDOM.innerHTML += html;
+	}
+
+});
+
+</script>
