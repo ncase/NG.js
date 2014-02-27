@@ -1,15 +1,8 @@
 NG.JS - An HTML5 port of the Newgrounds Flash API.
 ===
 
-Right now, this library only supports Medals & Newgrounds Passport.
-Which, fortunately, should cover a good 90% of all Newgrounds games.
+DEMO on NEWGROUNDS: http://www.newgrounds.com/projects/games/646548/preview
 
-**TODO:**
-
-* A default Medal UI
-* Highscores
-* Saving/loading data
-
-**Thanks to:**
-
-* The Newgrounds Team, obviously!
+Special thanks to the Newgrounds team, of course!
+This Newgrounds API is unofficial, it's just made by a long-time fan of the site.
+All code here is open source, under the public domain Unlicense.
