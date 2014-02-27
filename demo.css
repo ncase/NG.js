@@ -1,11 +1,26 @@
 body{
 	background:#eee;
-	margin:50px;
-
 	font-family: sans-serif;
 	font-weight: 100;
 	font-size: 20px;
 	line-height: 30px;
+	margin:0;
+	overflow: none;
+}
+#content{
+	width:calc(100% - 100px);
+	width:-o-calc(100% - 100px);
+	width:-ms-calc(100% - 100px);
+	width:-moz-calc(100% - 100px);
+	width:-webkit-calc(100% - 100px);
+	height:calc(100% - 100px);
+	height:-o-calc(100% - 100px);
+	height:-ms-calc(100% - 100px);
+	height:-moz-calc(100% - 100px);
+	height:-webkit-calc(100% - 100px);
+	overflow-y:scroll;
+	overflow-x:none;
+	padding:50px;
 }
 hr{
 	border: none;
@@ -32,6 +47,7 @@ button{
 	cursor: pointer;
 	font-weight: 100;
 	font-family: monospace;
+	margin-bottom: 5px;
 }
 button:hover{
 	background: #333;
