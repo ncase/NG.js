@@ -47,6 +47,9 @@ NG.connect = function( apiId, encryptionKey, movieVersion ){
 		NG.connection = JSON.parse(result);
 		NG.medals = NG.connection.medals || [];
 
+		// Create Default UI
+		_createMedalUI();
+
 		// Complete
 		console.log(NG.connection);
 		console.log("== Connection Complete! ==");
@@ -101,14 +104,60 @@ NG.getMedal = function(medalName){
 NG.unlockMedal = function(medalName){
 
 	// Get Medal ID
-	var medal = getMedal(medalName);
+	var medal = NG.getMedal(medalName);
 	if(!medal) return;
 	medal.medal_unlocked = true;
+
+	// Show Medal UI
+	_showMedal(medalName);
 
 	// Secure post
     return _securePost("unlockMedal",{
     	medal_id: medal.medal_id
-    })
+    });
+
+};
+
+
+///////////////////////
+// UI HELPER METHODS //
+///////////////////////
+
+var medalDOM = document.createElement("div");
+var _createMedalUI = function(){
+
+	// Create the DOM
+	document.body.appendChild(medalDOM);
+	medalDOM.innerHTML = ""+
+		"<div id='medal_container' style='position:fixed; background:#333; border-bottom:5px solid #222; width:300px; height:80px; top:10px; left:-310px; overflow:hidden; -webkit-transition:left 0.5s ease-in-out; -moz-transition:left 0.5s ease-in-out; -ms-transition:left 0.5s ease-in-out; -o-transition:left 0.5s ease-in-out; transition:left 0.5s ease-in-out;'>"+
+		"	<div style='width:300px; letter-spacing: 6.5px;height: 25px; color:#fd0; text-align:center; background:#000; font-size:20px;font-family: sans-serif;padding-top: 5px;'>MEDAL UNLOCKED</div>"+
+		"	<div id='medal_icon' style='float:left; width:50px; height:50px; background:#000'></div>"+
+		"	<div id='medal_description' style='float:left; color:#fff; font-weight:100; margin-left:10px; width:235px; height:45px; padding-top:7px; font-family:sans-serif; font-size:15px'></div>"+
+		"</div>";
+
+	// Force preload all images
+	for(var i=0;i<NG.medals.length;i++){
+		var imgSRC = NG.medals[i].medal_icon;
+		var img = new Image();
+		img.src = imgSRC;
+	}
+
+};
+var _showMedal = function(medalName){
+	
+	var medal = NG.getMedal(medalName);
+
+	var medal_container = document.getElementById('medal_container');
+	medal_container.style.left = '10px';
+	setTimeout(function(){
+		medal_container.style.left = '-310px';
+	},5000);
+	
+	var icon = document.getElementById('medal_icon');
+	icon.style.backgroundImage = 'url('+medal.medal_icon+')';
+
+	var desc = document.getElementById('medal_description');
+	desc.innerHTML = medal.medal_description;
 
 };
 
@@ -118,6 +167,7 @@ NG.unlockMedal = function(medalName){
 // AJAX HELPER METHODS //
 /////////////////////////
 
+//var NG_SERVER = "http://www.corsproxy.com/www.ngads.com/gateway_v2.php";
 var NG_SERVER = "http://ncase-proxy.herokuapp.com/www.ngads.com/gateway_v2.php";
 
 function httpRequest(data) {
