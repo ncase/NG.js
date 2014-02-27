@@ -130,7 +130,7 @@ var _createMedalUI = function(){
 	document.body.appendChild(medalDOM);
 	medalDOM.innerHTML = ""+
 		"<div id='medal_container' style='position:fixed; background:#333; border-bottom:5px solid #222; width:300px; height:80px; top:10px; left:-310px; overflow:hidden; -webkit-transition:left 0.5s ease-in-out; -moz-transition:left 0.5s ease-in-out; -ms-transition:left 0.5s ease-in-out; -o-transition:left 0.5s ease-in-out; transition:left 0.5s ease-in-out;'>"+
-		"	<div style='width:300px; letter-spacing: 6.5px;height: 25px; color:#fd0; text-align:center; background:#000; font-size:20px;font-family: sans-serif;padding-top: 5px;'>MEDAL UNLOCKED</div>"+
+		"	<div id='medal_name' style='line-height:1em; text-transform:uppercase; width:290px; padding-left:10px; letter-spacing: 2px; height:23px; color:#fd0; background:#000; font-size:20px;font-family: sans-serif;padding-top: 7px;'>MEDAL UNLOCKED</div>"+
 		"	<div id='medal_icon' style='float:left; width:50px; height:50px; background:#000'></div>"+
 		"	<div id='medal_description' style='float:left; color:#fff; font-weight:100; margin-left:10px; width:235px; height:45px; padding-top:7px; font-family:sans-serif; font-size:15px'></div>"+
 		"</div>";
@@ -153,11 +153,9 @@ var _showMedal = function(medalName){
 		medal_container.style.left = '-310px';
 	},5000);
 	
-	var icon = document.getElementById('medal_icon');
-	icon.style.backgroundImage = 'url('+medal.medal_icon+')';
-
-	var desc = document.getElementById('medal_description');
-	desc.innerHTML = medal.medal_description;
+	document.getElementById('medal_icon').style.backgroundImage = 'url('+medal.medal_icon+')';
+	document.getElementById('medal_description').innerHTML = medal.medal_description;
+	document.getElementById('medal_name').innerHTML = medal.medal_name;
 
 };
 

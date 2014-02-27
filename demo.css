@@ -1,0 +1,38 @@
+body{
+	background:#eee;
+	margin:50px;
+
+	font-family: sans-serif;
+	font-weight: 100;
+	font-size: 20px;
+	line-height: 30px;
+}
+hr{
+	border: none;
+	border-top: 3px dashed #ccc;
+	margin-top: 20px;
+	margin-bottom: 40px;
+}
+a{
+	color:#cc2727;
+}
+ol{
+	margin-top:20px; margin-bottom:40px;
+}
+li{
+	margin-bottom: 10px;
+}
+button{
+	font-size: 20px;
+	background: #000;
+	color: #fff;
+	border: none;
+	border-radius: 50px;
+	padding: 10px 20px;
+	cursor: pointer;
+	font-weight: 100;
+	font-family: monospace;
+}
+button:hover{
+	background: #333;
+}

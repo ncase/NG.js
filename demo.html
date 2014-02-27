@@ -1,3 +1,78 @@
+<!doctype>
+<html>
+	<head>
+		<title>The Newgrounds HTML5 API</title>
+		<link href='demo.css' rel='stylesheet' type='text/css'>
+	</head>
+	<body>
+		<div style="font-size:30px; margin-bottom:5px;">
+			Aw yiss, the Newgrounds HTML5 API!
+		</div>
+		Get this code <a href="https://github.com/ncase/ng.js" target="_blank">on Github</a>.
+		Created by <a href="http://nutcasenightmare.newgrounds.com/" target="_blank">NutcaseNightmare</a>.
+		
+		<hr>
+
+		<b>How to add this to your HTML5 game</b>
+		<ol>
+			<li>
+				<a href="http://www.newgrounds.com/projects/games/submit/simple" target="_blank">Create a new Newgrounds Game Project</a>
+			</li>
+			<li>
+				Download NG.min.js, the minified Javascript library.
+			</li>
+			<li>
+				Put this at the end of your index.html page:<br>
+				<span style="font-family:monospace">&lt;script src="lib/NG.min.js"&gt;&lt;/script&gt;</span>
+			</li>
+			<li>
+				In your main Javascript file, call NG.connect like this:<br>
+				<span style="font-family:monospace">NG.connect(YOUR_API_ID,YOUR_ENCRYPTION_KEY);</span>
+			</li>
+	  		<li>
+	  			Shake your cursor like it's dancing, coz you're done! :D
+	  		</li>
+	  	</ol>
+		
+  		<hr>
+
+		<b>How to Unlock Medals</b>
+		<br>
+		Whenever you want a medal to be unlocked, call this in Javascript:<br>
+		<span style="font-family:monospace">NG.unlockMedal(MEDAL_NAME);</span><br>
+		It comes with its own UI, and will display even if your player is not logged in!
+
+		<br><br>
+		<b>Try it out:</b>
+		<br>
+		<button onclick="NG.unlockMedal('Foobar')">NG.unlockMedal('Foobar')</button><br>
+		<button onclick="NG.unlockMedal('Lorem Ipsum')">NG.unlockMedal('Lorem Ipsum')</button><br>
+		<button onclick="NG.unlockMedal('HAVE DINNER WITH ME')">NG.unlockMedal('HAVE DINNER WITH ME')</button><br>
+		<button onclick="NG.unlockMedal('Flip Out')">NG.unlockMedal('Flip Out')</button>
+
+		<hr>
+
+		<b>Still In Progress</b>
+
+		<ol>
+			<li>Newgrounds Passport (half-implemented)</li>
+			<li>Scoreboards</li>
+			<li>Save Data</li>
+		</ol>
+
+		<hr>
+
+		<b>Credits & Stuff</b>
+
+		<br>
+
+		Special thanks to the Newgrounds team, of course!
+		This Newgrounds API is unofficial, it's just made by a long-time fan of the site.
+		All code here is open source, under the public domain Unlicense.
+
+	</body>
+</html>
+
 <script src="lib/NG.min.js"></script>
 <script>
 NG.connect("30437:HluZ7LWS","Fh303lEIt2qUdPKmAxLa8K3BaoJjqlwN");
